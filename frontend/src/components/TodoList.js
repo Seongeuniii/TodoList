@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import todo from "../img/todo.png"
 import done from "../img/done.png"
+import AddList from "./AddList";
 
 
 const TodoWrapper = styled.div`
@@ -16,10 +17,12 @@ const TodoWrapper = styled.div`
   .day-info-container {
     width: 80%;
     height: 100px;
+    margin-top: 15px;
     // background: pink;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: static;
   }
   
   .day-info-left {
@@ -78,15 +81,7 @@ const TodoWrapper = styled.div`
 `
 
 const TodoList = ({datas}) => {
-  // const datas = [
-  //   'Buy new sweatshirt',
-  //   'Begin promotional phase',
-  //   'Read and article',
-  //   'Try not to fall asleep',
-  //   "Watch 'Sherlock'",
-  //   "Begin QA for the product",
-  //   "Go for a walk"
-  // ]
+
   const [check, setCheck] = useState(true)
 
   const checkButton = () => {
@@ -109,10 +104,10 @@ const TodoList = ({datas}) => {
             </div>
           </div>
           <div className="day-info-right">THURSDAY</div>
+          <AddList/>
         </div>
-
         <div className="list-content-container">
-          {datas.map((data) => {
+          {datas && datas.map((data) => {
             return(
               <div className="list-content">
                 <div className="list-content-text">
