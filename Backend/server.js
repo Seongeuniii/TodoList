@@ -1,13 +1,22 @@
 const http = require('http');
 const fs = require('fs').promises
 
+const datas = [
+  'Buy new sweatshirt',
+  'Begin promotional phase',
+  'Read and article',
+  'Try not to fall asleep',
+  "Watch 'Sherlock'",
+  "Begin QA for the product",
+  "Go for a walk"
+]
 
 const server = http.createServer(async(req,res) => {
+    console.log(req.method,req.url)
     try {
         if (req.url == '/') {
-            const data = await fs.readFile('../../frontend/public/index.html');
-            res.writeHead(200,{})
-            res.send(data)
+            // res.writeHead(200,{})
+            res.end(JSON.stringify(datas))
             return   
         }
         res.writeHead(404)

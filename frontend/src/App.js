@@ -1,20 +1,26 @@
-import styled from "styled-components";
+import { useEffect, useState } from "react";
+import Axios from 'axios';
 import TodoList from "./components/TodoList";
-
-const Container = styled.div`
-  width: 370px;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-`
+// import AddList from "./components/AddList";
 
 function App() {
+  const [datas, setDatas] = useState(null)
 
+  useEffect (() => {
+    Axios.get('http://localhost:5000')
+    .then ((res) => {
+      setDatas(res.data)
+    })
+    .catch ((e) =>{
+      console.log(e);
+  })},[]);
+    
   return (
-    <Container>
-      <TodoList/>
-    </Container>
+    <>
+      <TodoList datas={datas}/>
+      {/* <AddList/> */}
+    </>
+
   );
 }
 

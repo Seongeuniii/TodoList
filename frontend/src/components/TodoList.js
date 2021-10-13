@@ -1,13 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-import AddList from "./AddList";
 import todo from "../img/todo.png"
 import done from "../img/done.png"
 
 
 const TodoWrapper = styled.div`
-  width:100%;
-  height:100%;
+  width: 330px;
+  height: 600px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -78,17 +77,16 @@ const TodoWrapper = styled.div`
   }
 `
 
-const TodoList = () => {
-  const datas = [
-    'Buy new sweatshirt',
-    'Begin promotional phase',
-    'Read and article',
-    'Try not to fall asleep',
-    "Watch 'Sherlock'",
-    "Begin QA for the product",
-    "Go for a walk"
-  ]
-
+const TodoList = ({datas}) => {
+  // const datas = [
+  //   'Buy new sweatshirt',
+  //   'Begin promotional phase',
+  //   'Read and article',
+  //   'Try not to fall asleep',
+  //   "Watch 'Sherlock'",
+  //   "Begin QA for the product",
+  //   "Go for a walk"
+  // ]
   const [check, setCheck] = useState(true)
 
   const checkButton = () => {
@@ -132,7 +130,6 @@ const TodoList = () => {
           })}
         </div>
       </TodoWrapper>
-      <AddList/>
     </>
   )
 }
