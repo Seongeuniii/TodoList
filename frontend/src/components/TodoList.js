@@ -1,9 +1,6 @@
-import { useState } from "react";
 import styled from "styled-components";
-import todo from "../img/todo.png"
-import done from "../img/done.png"
 import AddList from "./AddList";
-
+import TodoListItem from "./TodoListItem";
 
 const TodoWrapper = styled.div`
   width: 330px;
@@ -82,15 +79,7 @@ const TodoWrapper = styled.div`
 
 const TodoList = ({datas}) => {
 
-  const [check, setCheck] = useState(true)
-
-  const checkButton = () => {
-    if (check === true) {
-      setCheck(false)
-    } else {
-      setCheck(true)
-    }
-  }
+  
 
   return(
     <>
@@ -109,18 +98,7 @@ const TodoList = ({datas}) => {
         <div className="list-content-container">
           {datas && datas.map((data) => {
             return(
-              <div className="list-content">
-                <div className="list-content-text">
-                  {data}
-                </div>
-                <div className="list-content-checkbox">
-                  {/* 리스트마다 포스트로 체크 넣어줘야함 리스트.check로 불러오기*/}
-                  {check === true 
-                    ? <img onClick={checkButton} src={done} alt="완료"/> 
-                    : <img onClick={checkButton} src={todo} alt="미완료"/>
-                  }
-                </div>
-              </div>
+              <TodoListItem key={data.id} item={data.text} checked={data.checked}/>
             ) 
           })}
         </div>
