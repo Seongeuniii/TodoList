@@ -3,8 +3,8 @@ import AddList from "./AddList";
 import TodoListItem from "./TodoListItem";
 
 const TodoWrapper = styled.div`
-  width: 330px;
-  height: 600px;
+  width: 240px;
+  height: 420px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -13,8 +13,8 @@ const TodoWrapper = styled.div`
 
   .day-info-container {
     width: 80%;
-    height: 100px;
-    margin-top: 15px;
+    height: 60px;
+    // margin-top: 15px;
     // background: pink;
     display: flex;
     align-items: center;
@@ -28,26 +28,26 @@ const TodoWrapper = styled.div`
   }
 
   .day {
-    font-size: 2.4rem;
+    font-size: 1.7rem;
     font-weight: 570;
   }
 
   .day-info-left-inner {
-    font-size: 0.7rem;
-    margin-top: 13px;
+    font-size: 0.1rem;
+    margin-top: 4px;
     margin-left: 3px;
     
   }
 
   .day-info-right {
     width: 30%;
-    font-size: 0.9rem; 
+    font-size: 0.4rem; 
     text-align: right;
   }
 
   .list-content-container {
     width: 100%;
-    height: 500px;
+    height: 280px;
     // background: skyblue;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ const TodoWrapper = styled.div`
     width: 80%;
     height: 60px;
     background:white;
-    font-size: 1rem;
+    font-size: 0.7rem;
     display: flex;
   }
   
@@ -71,8 +71,8 @@ const TodoWrapper = styled.div`
   .list-content-checkbox {
     float: right;
     img {
-      width: 20px;
-      height: 20px;
+      width: 13px;
+      height: 13px;
     }
   }
 `
@@ -93,7 +93,7 @@ const TodoList = ({datas}) => {
             </div>
           </div>
           <div className="day-info-right">THURSDAY</div>
-          <AddList/>
+          {/* <AddList/> */}
         </div>
         <div className="list-content-container">
           {datas && datas.map((data) => {

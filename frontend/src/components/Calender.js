@@ -7,22 +7,22 @@ import { useState } from "react";
 
 const Wrapper = styled.div`
   width: 380px;
-  height: 100%;
+  height: 420px;
   background: white;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  border-right: black solid 1px;
   .calenderheader {
     margin-top: 20px;
     height: 100px;
   }
 
   .month {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-top: 5px;
     margin-bottom: 20px;
     img {
@@ -64,12 +64,13 @@ const Calender = () => {
   const daynamelist = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
   const [showMonth, setShowMonth] = useState(dayjs())
-
+  console.log(showMonth)
   const funcDates = (showMonth) =>{
     return [...Array(daynamelist.indexOf(showMonth.format('ddd')))].concat([...Array(showMonth.daysInMonth())].map((v,i) => i+1))
   }
 
   const [dates, setDates] = useState(funcDates(showMonth))
+  console.log(dates)
  
   const prevMonth = () => {
     setShowMonth(showMonth.subtract(1, 'month'))

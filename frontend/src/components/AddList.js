@@ -16,7 +16,7 @@ const AddList = () => {
   const addSchedule = () => {
     const newSchedule = prompt('새로운 일정을 입력하세요')
     if (newSchedule) {
-      Axios.get(`"http://localhost:5000/posts/"+${newSchedule}`)
+      Axios.put('http://localhost:5000',{ newSchedule })
       .then((response) => {
           console.log(response)  
       }).catch((error) => {

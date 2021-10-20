@@ -19,11 +19,10 @@ function App() {
 
   return (
     <>
-      <Calender/>
+      <Calender/> 
       {/* 클릭한 날짜마다 라우터 열어줘야하나 */}
-      {/* <TodoList datas={datas}/> */}
+      <TodoList datas={datas}/>
     </>
-
   );
 }
 

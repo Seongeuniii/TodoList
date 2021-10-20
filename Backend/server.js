@@ -62,19 +62,15 @@ const server = http.createServer(async(req,res) => {
               // res.writeHead(200,{})
               res.end(JSON.stringify(datas))
               return   
-          } else {
-              console.log(req.url)
-              res.end('포스트')
           } 
           res.writeHead(404)
           return res.end('NOT FOUND')
-
-        } 
-      } catch (err) {
-          console.error(err)
-          res.writeHead(500)
-          res.end(err)
-        }
+        }        
+    } catch (err) {
+        console.error(err)
+        res.writeHead(500)
+        res.end(err)
+      }
     
 })
 
