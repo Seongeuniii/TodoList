@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs').promises
 const url = require('url')
 
+
 // const datas = [
 //   'Buy new sweatshirt',
 //   'Begin promotional phase',
@@ -65,7 +66,11 @@ const server = http.createServer(async(req,res) => {
           } 
           res.writeHead(404)
           return res.end('NOT FOUND')
-        }        
+        } else {
+          res.end('포스트')
+          console.log('안녕')
+          return
+        }    
     } catch (err) {
         console.error(err)
         res.writeHead(500)
@@ -74,7 +79,12 @@ const server = http.createServer(async(req,res) => {
     
 })
 
+// const io = require('socket.io')(server, {
+//   cors: {origin: '*'}
+// })
+
 const PORT = 5000
+
 server.listen(PORT,() => {
     console.log(`Server is running at PORT: ${PORT}`);
 });

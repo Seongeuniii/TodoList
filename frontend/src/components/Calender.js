@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: black solid 1px;
+  border-right: rgb(212, 205, 195) solid 1px;
   .calenderheader {
     margin-top: 20px;
     height: 100px;
@@ -70,7 +70,6 @@ const Calender = () => {
   }
 
   const [dates, setDates] = useState(funcDates(showMonth))
-  console.log(dates)
  
   const prevMonth = () => {
     setShowMonth(showMonth.subtract(1, 'month'))

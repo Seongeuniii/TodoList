@@ -3,10 +3,10 @@ import plus from '../img/plusbutton.png'
 import Axios from 'axios';
 
 const ScheduleButton = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   position: absolute;
-  top: 750px;
+  top: 525px;
   cursor: pointer;
 `
 
@@ -16,7 +16,7 @@ const AddList = () => {
   const addSchedule = () => {
     const newSchedule = prompt('새로운 일정을 입력하세요')
     if (newSchedule) {
-      Axios.put('http://localhost:5000',{ newSchedule })
+      Axios.post('http://localhost:5000',{ newSchedule })
       .then((response) => {
           console.log(response)  
       }).catch((error) => {

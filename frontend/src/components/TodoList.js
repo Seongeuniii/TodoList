@@ -93,7 +93,7 @@ const TodoList = ({datas}) => {
             </div>
           </div>
           <div className="day-info-right">THURSDAY</div>
-          {/* <AddList/> */}
+          <AddList/>
         </div>
         <div className="list-content-container">
           {datas && datas.map((data) => {
