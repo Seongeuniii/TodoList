@@ -1,13 +1,14 @@
-import todo from "../img/todo.png"
-import done from "../img/done.png"
+import todoimg from "../img/todoimg.png"
+import doneimg from "../img/doneimg.png"
 import { useState } from "react";
 
-const TodoListItem = ({item, checked}) => {
+const TodoListItem = ({todo}) => {
 
+  const { text, checked } = todo
   const [check, setCheck] = useState(checked)
 
   const checkButton = () => {
-    if (check === true) {
+    if (checked === true) {
       setCheck(false)
     } else {
       setCheck(true)
@@ -16,14 +17,11 @@ const TodoListItem = ({item, checked}) => {
 
   return (
     <div className="list-content">
-      <div className="list-content-text">
-        {item}
-      </div>
+      <div className="list-content-text">{text}</div>
       <div className="list-content-checkbox">
-        {/* 리스트마다 포스트로 체크 넣어줘야함 리스트.check로 불러오기*/}
         {check === true 
-          ? <img onClick={checkButton} src={done} alt="완료"/> 
-          : <img onClick={checkButton} src={todo} alt="미완료"/>
+          ? <img onClick={checkButton} src={doneimg} alt="완료"/> 
+          : <img onClick={checkButton} src={todoimg} alt="미완료"/>
         }
       </div>
     </div>
